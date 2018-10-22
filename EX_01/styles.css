@@ -1,9 +1,19 @@
-body {
-    color: red;
+img {
+    /*width: 49%;*/
+    /*display: inline-block;*/
+    order: 1
+}
+
+p {
+    /*width: 49%;*/
+    /*display: inline-block;*/
+    /*position: absolute;*/
+    order: 2
+}
+
+div {
+    display: flex;
 }
 h1 {
-    color: blue;
-}
-.my-css-class {
-    color: green;
+    text-align: center;
 }
