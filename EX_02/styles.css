@@ -1,0 +1,31 @@
+body {
+    margin: 0px;
+}
+
+.navbar {
+    background-color: red;
+    height: 10%;
+    border-bottom: 1px solid red;
+    border-top: 1px solid red;
+}
+
+.navbar-button {
+    background-color: red;
+    border: 0px;
+    color: white;
+    margin-left: 1.5vh;
+    padding: 3vh;
+    font-size: 3vh;
+}
+
+.navbar-button:focus {
+    outline: none;
+}
+.navbar-button:hover {
+    background-color: white;
+    color: red;
+}
+
+button:focus {
+    outline: none;
+}
