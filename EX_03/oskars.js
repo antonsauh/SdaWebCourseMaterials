@@ -21,6 +21,17 @@ $('#submit-form').click(function () {
         // console.log(userObject['username']);
         // console.log(userObject['password']);
         // console.log(userObject['email'])
+    }else if (!hasLowerCase(userObject['password'])
+        && !hasUpperCase(userObject['password'])) {
+        alert("password must contain both upper and lower");
+    }
+
+    function hasLowerCase(str) {
+        return (/[a-z]/.test(str));
+    }
+
+    function hasUpperCase(str) {
+        return (/[A-Z]/.test(str));
     }
 
 });
