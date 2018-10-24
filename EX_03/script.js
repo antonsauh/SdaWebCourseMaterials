@@ -7,8 +7,15 @@ $(function () {
             return obj;
         }, {});
 
-
-
+        // min length for the pass
+        // should include number
+        // should include special character***
+        // check if pass meets your reqs
+        // if not
+            // alert("Password doesn't fit reqs");
+            // add red border to the password input element
+        // if yes
+            // print everything to the console, as before
         console.log(userObject['username']);
         console.log(userObject['password']);
         console.log(userObject['email']);
