@@ -1,3 +1,24 @@
+$(function () {
+
+    $('#submit-form').click(function() {
+
+        const userObject = $('form').serializeArray().reduce(function(obj, item) {
+            obj[item.name] = item.value;
+            return obj;
+        }, {});
+
+
+
+        console.log(userObject['username']);
+        console.log(userObject['password']);
+        console.log(userObject['email']);
+
+        // localStorage.setItem(userObject['email'], JSON.stringify(userObject))
+
+    });
+});
+
+
 // window.onload = () => {
 //
 // };
@@ -42,7 +63,7 @@
 
 
 
-$(document).ready(function () {
+// $(document).ready(function () {
     // console.log("Jquery on ready");
 
     // $('#my-button').click(function () {
@@ -53,19 +74,18 @@ $(document).ready(function () {
     // });
 
     // console.log($('form').serializeArray());
-
-    const data = $('form').serializeArray().reduce(function(obj, item) {
-        obj[item.name] = item.value;
-        return obj;
-    }, {});
-
-    console.log(data);
+    // const data = $('form').serializeArray().reduce(function(obj, item) {
+    //     obj[item.name] = item.value;
+    //     return obj;
+    // }, {});
+    //
+    // console.log(data);
     // $('.class');
 
     // $('button')
 
 
-});
+// });
 
 
 
