@@ -27,26 +27,6 @@
 // DEMO CODE
 //
 $(document).ready(function(){
-    $("#_save").on('click', function(){
-        console.log("Saving form data...");
-        const data = $("form#myForm").toJSON();
-        console.log(data);
-        localStorage['form_data'] = data;
-
-        return false;
-    });
-
-    $("#_load").on('click', function(){
-        if(localStorage['form_data']){
-            console.log("Loading form data...");
-            console.log(JSON.parse(localStorage['form_data']));
-            $("form#myForm").fromJSON(localStorage['form_data'])
-        } else {
-            console.log("Error: Save some data first")
-        }
-
-        return false;
-    })
 });
 
 
