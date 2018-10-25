@@ -25,6 +25,11 @@
 
 $(function () {
 
+
+    $("#clear").click(function () {
+       localStorage.clear();
+    });
+
     $("#save").on('click', function(){
         console.log("Saving form data...");
         const data = $("form#myForm").toJSON();
