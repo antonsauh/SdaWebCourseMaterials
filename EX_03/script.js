@@ -7,6 +7,15 @@ $(function () {
             return obj;
         }, {});
 
+
+        const $username = $('#my-username');
+        if($username.val() === ''){
+            $username.css('border', '1px solid red');
+        }else {
+            $username.css('border', '');
+        }
+
+
         // min length for the pass
         // should include number
         // should include special character***
