@@ -39,8 +39,12 @@ $(document).ready(function () {
     }
 
     function loadQuestionByNumber(questionNumber) {
-        changeButtonVisibilityForQuestion(current_question_number);
-        $question_container.load('questions/question_' + questionNumber.toString() + '.html');
+        changeButtonVisibilityForQuestion(questionNumber);
+        $question_container.load('questions/question_' + questionNumber.toString() + '.html',
+            null,
+            function (){
+                loadQuestionDataIfPresent(questionNumber);
+            })
     }
 
     function changeButtonVisibilityForQuestion(questionNumber) {
@@ -60,21 +64,27 @@ $(document).ready(function () {
     }
 
     function validateQuestion1() {
+
+        saveQuestionData(current_question_number);
         return true;
     }
 
     function validateQuestion2() {
+        saveQuestionData(current_question_number);
         return true;
     }
 
     function validateQuestion3() {
+        saveQuestionData(current_question_number);
         return true;
     }
 
     function validateQuestion4(){
+        saveQuestionData(current_question_number);
         return true;
     }
     function validateQuestion5() {
+        saveQuestionData(current_question_number);
         return true;
     }
 
@@ -96,5 +106,16 @@ $(document).ready(function () {
                 return validateQuestion5();
             }
         }
+    }
+
+    function loadQuestionDataIfPresent(questionNumber) {
+        const data = localStorage.getItem(questionNumber.toString());
+        if (data !== null) {
+            $('form').fromJSON(data);
+        }
+    }
+
+    function saveQuestionData(questionNumber) {
+        localStorage.setItem(questionNumber.toString(), $('form').toJSON());
     }
 });
