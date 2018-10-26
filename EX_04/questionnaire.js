@@ -1,6 +1,7 @@
 $(document).ready(function () {
     const questions_count = 3;
     let current_question_number = 1;
+
     const $question_container = $('#question-container');
     const $next_button = $('#go-to-next');
     const $previous_button = $('#go-to-previous');
@@ -19,7 +20,9 @@ $(document).ready(function () {
             loadPreviousQuestion();
         });
         $submit_button.click(function () {
-            console.log("Form Submitted");
+            if(validateAnswer()){
+                window.location.replace('summary.html');
+            }
         })
     }
 
@@ -63,31 +66,6 @@ $(document).ready(function () {
 
     }
 
-    function validateQuestion1() {
-
-        saveQuestionData(current_question_number);
-        return true;
-    }
-
-    function validateQuestion2() {
-        saveQuestionData(current_question_number);
-        return true;
-    }
-
-    function validateQuestion3() {
-        saveQuestionData(current_question_number);
-        return true;
-    }
-
-    function validateQuestion4(){
-        saveQuestionData(current_question_number);
-        return true;
-    }
-    function validateQuestion5() {
-        saveQuestionData(current_question_number);
-        return true;
-    }
-
     function validateAnswer() {
         switch (current_question_number) {
             case 1: {
@@ -107,6 +85,38 @@ $(document).ready(function () {
             }
         }
     }
+
+    function validateQuestion1() {
+        //i check if field is ok
+        //if its ok i Do this
+        console.log(current_question_number);
+        saveQuestionData(current_question_number);
+        return true;
+
+        // i
+    }
+
+    function validateQuestion2() {
+        console.log(current_question_number);
+        saveQuestionData(current_question_number);
+        return true;
+    }
+
+    function validateQuestion3() {
+        console.log(current_question_number);
+        saveQuestionData(current_question_number);
+        return true;
+    }
+
+    function validateQuestion4(){
+        saveQuestionData(current_question_number);
+        return true;
+    }
+    function validateQuestion5() {
+        saveQuestionData(current_question_number);
+        return true;
+    }
+
 
     function loadQuestionDataIfPresent(questionNumber) {
         const data = localStorage.getItem(questionNumber.toString());
