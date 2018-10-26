@@ -58,6 +58,8 @@ $(function () {
             return obj;
         }, {});
 
+        $('#container').html('<h1>Hello World</h1>');
+
 
         const $username = $('#my-username');
         if($username.val() === ''){
