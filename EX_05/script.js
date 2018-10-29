@@ -14,25 +14,25 @@ $(document).ready(function () {
     // }
 
 
-    $.get('https://damp-island-30027.herokuapp.com/users', function (data, status) {
-        console.log(status);
-        console.log(data);
-        data.forEach((user) => {
-            console.log("Username: " + user.name);
-            console.log("Password: " + user.password);
-            console.log("Email: " + user.email);
-            console.log("---------------------------");
-            const $container = $('#container');
-            $container.append('<p>' + user.name +'</p>');
-            $container.append('<p>' + user.password +'</p>');
-            $container.append('<p>' + user.email +'</p>');
-            $container.append('<p>----------------------------------</p>');
-        });
-        // data.forEach(function(record){
-        //
-        // });
-        $('h1').html(status.toString());
-    });
+    // $.get('https://damp-island-30027.herokuapp.com/users', function (data, status) {
+    //     console.log(status);
+    //     console.log(data);
+    //     data.forEach((user) => {
+    //         console.log("Username: " + user.name);
+    //         console.log("Password: " + user.password);
+    //         console.log("Email: " + user.email);
+    //         console.log("---------------------------");
+    //         const $container = $('#container');
+    //         $container.append('<p>' + user.name +'</p>');
+    //         $container.append('<p>' + user.password +'</p>');
+    //         $container.append('<p>' + user.email +'</p>');
+    //         $container.append('<p>----------------------------------</p>');
+    //     });
+    //     // data.forEach(function(record){
+    //     //
+    //     // });
+    //     $('h1').html(status.toString());
+    // });
     // console.log("Page has opened");
 
     // $.ajax(
@@ -85,14 +85,15 @@ $(document).ready(function () {
             console.log(xhr);
             console.log(ajaxOptions);
             console.log(thrownError);
+            alert("Error Logging In. Error code: " + thrownError)
         },
         data: JSON.stringify({
             email: "tony@email.com",
-            password: "123?pass"
+            password: $('#id').val()
         }),
         contentType: "application/json"
 
-    })
+    });
     function callback() {
             console.log('success');
         }
