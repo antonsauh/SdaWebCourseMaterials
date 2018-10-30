@@ -13,7 +13,6 @@ $(document).ready(function () {
     //     callback();
     // }
 
-
     // $.get('https://damp-island-30027.herokuapp.com/users', function (data, status) {
     //     console.log(status);
     //     console.log(data);
